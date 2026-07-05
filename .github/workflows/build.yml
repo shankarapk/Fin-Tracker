@@ -25,7 +25,6 @@ jobs:
           unzip -q gradle-8.2-bin.zip -d /opt/gradle
           echo "/opt/gradle/gradle-8.2/bin" >> $GITHUB_PATH
       - name: Build APK
-        - name: Build APK
         run: gradle assembleDebug --no-daemon --info 2>&1 | grep -A3 "error:"
       - name: Upload APK
         uses: actions/upload-artifact@v4
